@@ -1,0 +1,14 @@
+<svg viewBox="0 0 300 90" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="6,10 14,4 30,9 48,3 66,8 84,2 102,9 120,4 138,8 156,3 174,9 192,4 210,8 228,3 246,9 264,4 282,8 294,3 296,80 288,86 270,81 252,87 234,82 216,88 198,82 180,87 162,82 144,88 126,82 108,87 90,82 72,88 54,82 36,87 18,82 4,86"
+    fill="#f6bcd0" opacity="0.88"/>
+  <circle cx="30" cy="25" r="5" fill="#fff" opacity="0.7"/>
+  <circle cx="70" cy="55" r="5" fill="#fff" opacity="0.7"/>
+  <circle cx="110" cy="20" r="5" fill="#fff" opacity="0.7"/>
+  <circle cx="150" cy="50" r="5" fill="#fff" opacity="0.7"/>
+  <circle cx="190" cy="22" r="5" fill="#fff" opacity="0.7"/>
+  <circle cx="230" cy="55" r="5" fill="#fff" opacity="0.7"/>
+  <circle cx="270" cy="20" r="5" fill="#fff" opacity="0.7"/>
+  <circle cx="50" cy="45" r="3" fill="#fff" opacity="0.5"/>
+  <circle cx="130" cy="40" r="3" fill="#fff" opacity="0.5"/>
+  <circle cx="210" cy="42" r="3" fill="#fff" opacity="0.5"/>
+</svg>

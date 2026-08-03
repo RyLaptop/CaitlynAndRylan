@@ -1,0 +1,12 @@
+<svg viewBox="0 0 240 290" xmlns="http://www.w3.org/2000/svg">
+  <g transform="rotate(-3 120 145)">
+    <rect x="10" y="10" width="220" height="270" rx="4" fill="#fffdf8" stroke="#e8dfd0" stroke-width="2"/>
+    <rect x="24" y="24" width="192" height="192" fill="#f4ece0"/>
+    <rect x="24" y="24" width="192" height="192" fill="none" stroke="#d8cdbb" stroke-width="1.5"/>
+    <text x="120" y="255" font-family="Segoe Script, Comic Sans MS, cursive" font-size="20" fill="#c98ba0" text-anchor="middle">our moment &lt;3</text>
+  </g>
+  <!-- tape corner -->
+  <g transform="translate(150,-10) rotate(35)">
+    <rect x="0" y="0" width="60" height="26" fill="#f6bcd0" opacity="0.85"/>
+  </g>
+</svg>

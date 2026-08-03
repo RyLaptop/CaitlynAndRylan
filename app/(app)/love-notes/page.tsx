@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { addNote, deleteNote } from "./actions";
-import Link from "next/link";
+import Image from "next/image";
+import BackBtn from "../_back-btn";
 
 const MOODS = ["💕","🌸","🐯","✨","🥰","💌","🌷","💫","🤗","😊"];
 
@@ -12,18 +13,22 @@ export default async function LoveNotesPage() {
     .select("*, profiles(name, role)")
     .order("created_at", { ascending: false });
 
-  const { data: profile } = await supabase.from("profiles").select("name, role").eq("id", user!.id).single();
-
   return (
     <div className="px-4 pt-6 max-w-lg mx-auto">
-      <div className="text-center mb-6">
-        <h1 className="font-hand text-4xl text-blush-dark font-bold">Love Notes 💌</h1>
-        <p className="text-sm text-gray-500 font-sans mt-1">little reminders just for us</p>
+      <div className="flex items-center gap-3 mb-2">
+        <BackBtn href="/home" />
+        <div className="flex items-center gap-2 flex-1">
+          <Image src="/envelope-doodle.svg" alt="" width={44} height={32} className="opacity-80"/>
+          <h1 className="font-hand text-3xl text-blush-dark font-bold">Love Notes</h1>
+        </div>
+        <Image src="/pushpin-heart.svg" alt="" width={28} height={36} className="opacity-70"/>
       </div>
+      <p className="text-sm text-gray-500 font-sans mb-4 ml-12">little reminders just for us</p>
 
-      <form action={addNote} className="tape bg-white rounded-3xl shadow-lg p-5 mb-6 mt-4">
+      <form action={addNote} className="bg-white rounded-3xl shadow-lg p-5 mb-4 relative">
+        <Image src="/tape-corner.svg" alt="" width={40} height={40} className="absolute -top-3 left-1/2 -translate-x-1/2 opacity-90 pointer-events-none"/>
         <textarea name="content" required placeholder="Write a little note… 💕"
-          rows={3} className="w-full border-2 border-blush/30 rounded-2xl p-3 text-sm font-sans outline-none focus:border-blush bg-cream resize-none" />
+          rows={3} className="w-full border-2 border-blush/30 rounded-2xl p-3 text-sm font-sans outline-none focus:border-blush bg-cream resize-none mt-1" />
         <div className="flex items-center gap-2 mt-3">
           <select name="mood" className="border-2 border-blush/30 rounded-xl px-3 py-2 text-sm font-sans bg-cream focus:border-blush outline-none">
             {MOODS.map((m) => <option key={m} value={m}>{m}</option>)}
@@ -32,14 +37,22 @@ export default async function LoveNotesPage() {
         </div>
       </form>
 
-      <div className="flex flex-col gap-4">
+      {/* Washi tape divider */}
+      <div className="-mx-4 mb-4 overflow-hidden">
+        <Image src="/washi-tape-stripe-sage.svg" alt="" width={400} height={55} className="w-full opacity-60"/>
+      </div>
+
+      <div className="flex flex-col gap-5">
         {notes?.map((note: any) => {
           const isMe = note.user_id === user!.id;
           const role = note.profiles?.role;
-          const tapeColor = role === "rylan" ? "tape-yellow" : "tape-lavender";
           return (
-            <div key={note.id} className={`tape ${tapeColor} bg-white rounded-3xl shadow-sm p-5 mt-2 ${isMe ? "ml-4" : "mr-4"} animate-fade-in`}>
-              <div className="flex items-start gap-2">
+            <div key={note.id}
+              className={`relative bg-white rounded-3xl shadow-sm p-5 ${isMe ? "ml-4" : "mr-4"} animate-fade-in`}>
+              {/* pushpin */}
+              <Image src="/pushpin-heart.svg" alt="" width={22} height={28}
+                className="absolute -top-3 left-4 opacity-80 pointer-events-none"/>
+              <div className="flex items-start gap-2 mt-1">
                 <span className="text-2xl">{note.mood}</span>
                 <div className="flex-1">
                   <p className="text-sm font-sans text-gray-700 leading-relaxed">{note.content}</p>
@@ -53,13 +66,18 @@ export default async function LoveNotesPage() {
                   </form>
                 )}
               </div>
+              {/* heart stitched decoration on some notes */}
+              {note.mood === "💕" && (
+                <Image src="/heart-stitched.svg" alt="" width={28} height={26}
+                  className="absolute -bottom-3 right-4 opacity-60 pointer-events-none"/>
+              )}
             </div>
           );
         })}
         {!notes?.length && (
-          <div className="text-center py-12 text-gray-300">
-            <p className="text-5xl">💌</p>
-            <p className="font-sans text-sm mt-2">No notes yet — write the first one!</p>
+          <div className="text-center py-12 text-gray-300 flex flex-col items-center gap-3">
+            <Image src="/envelope-doodle.svg" alt="" width={80} height={58} className="opacity-40"/>
+            <p className="font-sans text-sm">No notes yet — write the first one!</p>
           </div>
         )}
       </div>
