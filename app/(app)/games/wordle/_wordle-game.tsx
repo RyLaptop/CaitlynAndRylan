@@ -26,7 +26,7 @@ function evaluateGuess(guess: string, word: string): LetterState[] {
   return result;
 }
 
-export default function WordleGame({ word, hint, packId }: { word: string; hint: string; packId: number }) {
+export default function WordleGame({ word, packId }: { word: string; packId: number }) {
   const [guesses, setGuesses] = useState<string[]>([]);
   const [results, setResults] = useState<LetterState[][]>([]);
   const [current, setCurrent] = useState("");
@@ -77,8 +77,6 @@ export default function WordleGame({ word, hint, packId }: { word: string; hint:
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <p className="text-sm text-gray-500 font-sans italic">"{hint}"</p>
-
       <div className="flex flex-col gap-1.5">
         {rows.map((row, ri) => (
           <div key={ri} className={`flex gap-1.5 ${shake && ri === guesses.length ? "animate-shake" : ""}`}>

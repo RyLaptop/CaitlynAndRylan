@@ -23,7 +23,7 @@ export default async function WordlePage({ searchParams }: { searchParams: Promi
         ))}
       </div>
 
-      <WordleGame word={pack.word} hint={pack.hint} packId={packId} />
+      <WordleGame key={packId} word={pack.word} packId={packId} />
     </div>
   );
 }

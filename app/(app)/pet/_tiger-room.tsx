@@ -12,15 +12,16 @@ const SPOTS: Record<Spot, { x: number; label: string }> = {
 
 const SPOT_ORDER: Spot[] = ["window", "catTree", "center", "scratchPost"];
 
+/* ─── white Siberian tiger cub SVG ─── */
 function TigerSVG({ action, flipped }: { action: string; flipped: boolean }) {
-  const isWalking  = action === "walk";
-  const isSleeping = action === "sleep";
+  const isWalking    = action === "walk";
+  const isSleeping   = action === "sleep";
   const isScratching = action === "scratch";
 
   return (
     <svg
-      viewBox="0 0 215 205"
-      width="120" height="115"
+      viewBox="0 0 222 200"
+      width="130" height="117"
       style={{
         transform: flipped ? "scaleX(-1)" : undefined,
         transition: "transform 0.4s",
@@ -30,172 +31,184 @@ function TigerSVG({ action, flipped }: { action: string; flipped: boolean }) {
     >
       <style>{`
         @keyframes cr-tailWag {
-          0%,100% { transform: rotate(-9deg); }
-          50%      { transform: rotate(11deg); }
+          0%,100% { transform: rotate(-10deg); }
+          50%      { transform: rotate(13deg); }
         }
         @keyframes cr-legA {
-          0%,100% { transform: rotate(-19deg); }
-          50%      { transform: rotate(19deg); }
+          0%,100% { transform: rotate(-20deg); }
+          50%      { transform: rotate(20deg); }
         }
         @keyframes cr-legB {
-          0%,100% { transform: rotate(19deg); }
-          50%      { transform: rotate(-19deg); }
+          0%,100% { transform: rotate(20deg); }
+          50%      { transform: rotate(-20deg); }
         }
         @keyframes cr-bodyBob {
           0%,100% { transform: translateY(0px); }
           50%      { transform: translateY(-4px); }
         }
-        @keyframes cr-scratchArm {
+        @keyframes cr-scratch {
           0%,100% { transform: translateY(0px); }
-          50%      { transform: translateY(-7px); }
+          50%      { transform: translateY(-8px); }
         }
         @keyframes cr-zzz {
-          0%   { opacity: 0; transform: translate(0px,0px) scale(0.7); }
+          0%   { opacity: 0; transform: translate(0px, 0px) scale(0.7); }
           35%  { opacity: 1; }
-          100% { opacity: 0; transform: translate(7px,-18px) scale(1.25); }
+          100% { opacity: 0; transform: translate(8px, -20px) scale(1.3); }
         }
       `}</style>
 
       <g style={{ animation: isWalking ? "cr-bodyBob 0.55s ease-in-out infinite" : undefined }}>
 
-        {/* === TAIL (pivot at body left edge ~x44 y122) === */}
-        <g style={{ transformOrigin: "44px 122px", animation: "cr-tailWag 1.1s ease-in-out infinite" }}>
-          <path d="M44 122 Q16 102 14 128 Q12 153 26 151"
-            stroke="#f5b04a" strokeWidth="11" fill="none" strokeLinecap="round"/>
-          <path d="M44 122 Q16 102 14 128 Q12 153 26 151"
-            stroke="#6b3a15" strokeWidth="3" fill="none" strokeLinecap="round"
-            strokeDasharray="8,12" opacity="0.65"/>
+        {/* ── TAIL ─────────────────────────────────────── */}
+        <g style={{ transformOrigin: "44px 120px", animation: "cr-tailWag 1.1s ease-in-out infinite" }}>
+          <path d="M44 120 Q15 100 13 128 Q11 154 26 151"
+            stroke="#e8e4dc" strokeWidth="13" fill="none" strokeLinecap="round"/>
+          <path d="M44 120 Q15 100 13 128 Q11 154 26 151"
+            stroke="#2d2a26" strokeWidth="3.5" fill="none" strokeLinecap="round"
+            strokeDasharray="10,14" opacity="0.75"/>
         </g>
 
-        {/* === BACK FAR leg (darker, behind body) — legB phase === */}
+        {/* ── BACK FAR leg (darker, behind body, legB) ── */}
         {!isScratching && (
-          <g style={{ transformOrigin: "68px 154px", animation: isWalking ? "cr-legB 0.55s ease-in-out infinite" : undefined }}>
-            <rect x="62" y="154" width="12" height="33" rx="6" fill="#c87820"/>
-            <ellipse cx="68" cy="188" rx="9" ry="5" fill="#a86010"/>
+          <g style={{ transformOrigin: "68px 152px", animation: isWalking ? "cr-legB 0.55s ease-in-out infinite" : undefined }}>
+            <rect x="62" y="152" width="12" height="28" rx="6" fill="#c8c4bc"/>
+            <ellipse cx="68" cy="181" rx="9" ry="5.5" fill="#b8b4ac"/>
           </g>
         )}
 
-        {/* === FRONT FAR leg (darker, behind body) — legA phase === */}
+        {/* ── FRONT FAR leg (behind body, legA) ─────────── */}
         {!isScratching && (
-          <g style={{ transformOrigin: "132px 154px", animation: isWalking ? "cr-legA 0.55s ease-in-out infinite" : undefined }}>
-            <rect x="126" y="154" width="12" height="33" rx="6" fill="#c87820"/>
-            <ellipse cx="132" cy="188" rx="9" ry="5" fill="#a86010"/>
+          <g style={{ transformOrigin: "132px 152px", animation: isWalking ? "cr-legA 0.55s ease-in-out infinite" : undefined }}>
+            <rect x="126" y="152" width="12" height="28" rx="6" fill="#c8c4bc"/>
+            <ellipse cx="132" cy="181" rx="9" ry="5.5" fill="#b8b4ac"/>
           </g>
         )}
 
-        {/* === BODY === */}
-        <ellipse cx="100" cy="126" rx="58" ry="28" fill="#f5b04a"/>
-        {/* Belly */}
-        <ellipse cx="110" cy="136" rx="36" ry="16" fill="#fde8c8"/>
-        {/* Body stripes */}
-        <path d="M74 100 Q65 112 72 126" stroke="#6b3a15" strokeWidth="3.5" fill="none" strokeLinecap="round" opacity="0.7"/>
-        <path d="M93  97 Q84 109 91 123" stroke="#6b3a15" strokeWidth="3.5" fill="none" strokeLinecap="round" opacity="0.7"/>
-        <path d="M111 97 Q102 109 109 123" stroke="#6b3a15" strokeWidth="3.5" fill="none" strokeLinecap="round" opacity="0.7"/>
+        {/* ── BODY ─────────────────────────────────────── */}
+        <ellipse cx="100" cy="126" rx="57" ry="30" fill="#edeae4"/>
+        {/* Belly (pure white) */}
+        <ellipse cx="110" cy="136" rx="37" ry="18" fill="#faf8f5"/>
+        {/* Body stripes — dark charcoal on white */}
+        <path d="M76 97 Q67 110 74 126"  stroke="#2d2a26" strokeWidth="4" fill="none" strokeLinecap="round" opacity="0.7"/>
+        <path d="M95 94 Q86 107 93 123"  stroke="#2d2a26" strokeWidth="4" fill="none" strokeLinecap="round" opacity="0.7"/>
+        <path d="M113 94 Q104 107 111 123" stroke="#2d2a26" strokeWidth="4" fill="none" strokeLinecap="round" opacity="0.7"/>
 
-        {/* === SCRATCHING ARMS (front legs reaching forward-up) === */}
+        {/* ── SCRATCHING ARMS ──────────────────────────── */}
         {isScratching && (
           <>
-            <g style={{ transformOrigin: "142px 154px", animation: "cr-scratchArm 0.38s ease-in-out infinite" }}>
-              <line x1="142" y1="158" x2="170" y2="122" stroke="#f5b04a" strokeWidth="13" strokeLinecap="round"/>
-              <circle cx="170" cy="122" r="9" fill="#e09030"/>
-              <line x1="164" y1="113" x2="170" y2="120" stroke="#fffde0" strokeWidth="1.5" strokeLinecap="round"/>
-              <line x1="170" y1="111" x2="172" y2="119" stroke="#fffde0" strokeWidth="1.5" strokeLinecap="round"/>
-              <line x1="175" y1="114" x2="174" y2="120" stroke="#fffde0" strokeWidth="1.5" strokeLinecap="round"/>
+            <g style={{ animation: "cr-scratch 0.38s ease-in-out infinite" }}>
+              <line x1="142" y1="156" x2="172" y2="120" stroke="#edeae4" strokeWidth="14" strokeLinecap="round"/>
+              <circle cx="172" cy="120" r="9" fill="#ccc8c0"/>
+              <line x1="165" y1="111" x2="172" y2="118" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.9"/>
+              <line x1="171" y1="109" x2="174" y2="117" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.9"/>
+              <line x1="177" y1="112" x2="176" y2="118" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.9"/>
             </g>
-            <g style={{ transformOrigin: "132px 154px", animation: "cr-scratchArm 0.38s ease-in-out infinite", animationDelay: "0.19s" }}>
-              <line x1="132" y1="158" x2="158" y2="126" stroke="#d88830" strokeWidth="11" strokeLinecap="round"/>
-              <circle cx="158" cy="126" r="7" fill="#b86820"/>
+            <g style={{ animation: "cr-scratch 0.38s ease-in-out infinite", animationDelay: "0.19s" }}>
+              <line x1="130" y1="156" x2="158" y2="125" stroke="#ccc8c0" strokeWidth="11" strokeLinecap="round"/>
+              <circle cx="158" cy="125" r="7" fill="#b8b4ac"/>
             </g>
-            {/* Back legs stay planted */}
-            <rect x="62"  y="154" width="12" height="33" rx="6" fill="#c87820"/>
-            <ellipse cx="68"  cy="188" rx="9" ry="5" fill="#a86010"/>
-            <rect x="72"  y="154" width="14" height="35" rx="7" fill="#f5b04a"/>
-            <ellipse cx="79"  cy="190" rx="10" ry="6" fill="#e09030"/>
+            <rect x="62" y="152" width="12" height="28" rx="6" fill="#c8c4bc"/>
+            <ellipse cx="68" cy="181" rx="9" ry="5.5" fill="#b8b4ac"/>
+            <rect x="72" y="152" width="14" height="30" rx="7" fill="#edeae4"/>
+            <ellipse cx="79" cy="183" rx="10" ry="6" fill="#ccc8c0"/>
           </>
         )}
 
-        {/* === FRONT NEAR leg (bright, in front of body) — legA phase === */}
+        {/* ── FRONT NEAR leg (bright, legA) ─────────────── */}
         {!isScratching && (
-          <g style={{ transformOrigin: "143px 154px", animation: isWalking ? "cr-legA 0.55s ease-in-out infinite" : undefined }}>
-            <rect x="136" y="154" width="14" height="35" rx="7" fill="#f5b04a"/>
-            <ellipse cx="143" cy="190" rx="10" ry="6" fill="#e09030"/>
+          <g style={{ transformOrigin: "143px 152px", animation: isWalking ? "cr-legA 0.55s ease-in-out infinite" : undefined }}>
+            <rect x="136" y="152" width="14" height="30" rx="7" fill="#edeae4"/>
+            <ellipse cx="143" cy="183" rx="10" ry="6" fill="#ccc8c0"/>
           </g>
         )}
 
-        {/* === BACK NEAR leg (bright, in front of body) — legB phase === */}
+        {/* ── BACK NEAR leg (bright, legB) ──────────────── */}
         {!isScratching && (
-          <g style={{ transformOrigin: "79px 154px", animation: isWalking ? "cr-legB 0.55s ease-in-out infinite" : undefined }}>
-            <rect x="72" y="154" width="14" height="35" rx="7" fill="#f5b04a"/>
-            <ellipse cx="79" cy="190" rx="10" ry="6" fill="#e09030"/>
+          <g style={{ transformOrigin: "79px 152px", animation: isWalking ? "cr-legB 0.55s ease-in-out infinite" : undefined }}>
+            <rect x="72" y="152" width="14" height="30" rx="7" fill="#edeae4"/>
+            <ellipse cx="79" cy="183" rx="10" ry="6" fill="#ccc8c0"/>
           </g>
         )}
 
-        {/* === HEAD (circle, attached to front/right of body) === */}
-        <circle cx="156" cy="84" r="42" fill="#f5b04a"/>
+        {/* ── HEAD (big chibi circle) ───────────────────── */}
+        {/* Fluffy neck/chin mane poof */}
+        <ellipse cx="130" cy="112" rx="22" ry="16" fill="#edeae4" opacity="0.8"/>
+
+        <circle cx="158" cy="82" r="50" fill="#edeae4"/>
+
+        {/* Fluffy ear tufts (white poof behind ears) */}
+        <ellipse cx="126" cy="47" rx="13" ry="11" fill="#edeae4" opacity="0.7"/>
+        <ellipse cx="184" cy="42" rx="11" ry="10" fill="#edeae4" opacity="0.7"/>
 
         {/* Left ear */}
-        <polygon points="130,56 122,26 152,50" fill="#f5b04a"/>
-        <polygon points="131,57 126,30 150,51" fill="#ffb7c5"/>
+        <polygon points="124,59 116,24 152,51" fill="#edeae4"/>
+        <polygon points="126,59 120,28 150,52" fill="#ffc8d4"/>
         {/* Right ear */}
-        <polygon points="174,51 180,22 196,46" fill="#f5b04a"/>
-        <polygon points="175,52 181,27 193,47" fill="#ffb7c5"/>
+        <polygon points="178,53 185,20 200,47" fill="#edeae4"/>
+        <polygon points="179,53 186,24 198,48" fill="#ffc8d4"/>
 
-        {/* Head stripes */}
-        <path d="M138 50 Q130 60 134 72" stroke="#6b3a15" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.7"/>
-        <path d="M151 46 Q143 56 147 68" stroke="#6b3a15" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.7"/>
-        <path d="M126 74 Q118 80 122 92" stroke="#6b3a15" strokeWidth="2"   fill="none" strokeLinecap="round" opacity="0.6"/>
+        {/* Head stripes (few, dark, white tiger style) */}
+        <path d="M140 50 Q132 63 136 76" stroke="#2d2a26" strokeWidth="3"   fill="none" strokeLinecap="round" opacity="0.65"/>
+        <path d="M153 46 Q145 59 149 72" stroke="#2d2a26" strokeWidth="3"   fill="none" strokeLinecap="round" opacity="0.65"/>
+        <path d="M122 78 Q114 85 118 97" stroke="#2d2a26" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.5"/>
+        {/* Forehead M marking (classic tiger) */}
+        <path d="M148 44 Q152 38 156 44 Q160 38 164 44" stroke="#2d2a26" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.5"/>
 
-        {/* === EYES === */}
+        {/* ── EYES ─────────────────────────────────────── */}
         {!isSleeping ? (
           <>
-            {/* Main near eye (left from viewer) */}
-            <circle cx="140" cy="80" r="13" fill="white"/>
-            <circle cx="140" cy="80" r="9"  fill="#87CEEB"/>
-            <circle cx="141" cy="80" r="6"  fill="#1a1a2e"/>
-            <circle cx="143" cy="77" r="2.2" fill="white"/>
+            {/* Near eye — BIG & sparkly */}
+            <circle cx="139" cy="79" r="16" fill="white"/>
+            <circle cx="139" cy="79" r="12" fill="#9ad4f0"/>
+            <circle cx="140" cy="79" r="8"  fill="#1a1a2e"/>
+            {/* Sparkle highlights */}
+            <circle cx="144" cy="74" r="3"   fill="white"/>
+            <circle cx="136" cy="83" r="1.5" fill="white" opacity="0.75"/>
             {/* Far eye (partially visible) */}
-            <circle cx="168" cy="77" r="9"   fill="white"/>
-            <circle cx="168" cy="77" r="6.5" fill="#87CEEB"/>
-            <circle cx="169" cy="77" r="4"   fill="#1a1a2e"/>
-            <circle cx="171" cy="75" r="1.5" fill="white"/>
+            <circle cx="172" cy="76" r="11" fill="white"/>
+            <circle cx="172" cy="76" r="8"  fill="#9ad4f0"/>
+            <circle cx="173" cy="76" r="5"  fill="#1a1a2e"/>
+            <circle cx="176" cy="73" r="2"  fill="white"/>
           </>
         ) : (
           <>
-            <path d="M130 80 Q140 74 150 80" stroke="#6b3a15" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-            <path d="M159 77 Q167 71 175 77" stroke="#6b3a15" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+            <path d="M127 80 Q139 73 151 80" stroke="#2d2a26" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+            <path d="M161 77 Q171 70 181 77" stroke="#2d2a26" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
           </>
         )}
 
-        {/* Cheek blushes */}
-        <ellipse cx="126" cy="93" rx="13" ry="8" fill="#ffb7c5" opacity="0.55"/>
-        <ellipse cx="183" cy="90" rx="9"  ry="6" fill="#ffb7c5" opacity="0.45"/>
+        {/* BIG blush marks */}
+        <ellipse cx="120" cy="97" rx="18" ry="11" fill="#ffb7c5" opacity="0.62"/>
+        <ellipse cx="190" cy="92" rx="12" ry="8"  fill="#ffb7c5" opacity="0.5"/>
 
         {/* Nose */}
-        {!isSleeping && <ellipse cx="193" cy="89" rx="7" ry="5" fill="#ffb7c5"/>}
+        {!isSleeping && (
+          <ellipse cx="200" cy="88" rx="7.5" ry="5.5" fill="#ff9eb5"/>
+        )}
 
         {/* Mouth */}
         {!isSleeping && (
           <>
-            <path d="M187 94 Q193 99 199 94" stroke="#cc8888" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-            <line x1="193" y1="94" x2="193" y2="99" stroke="#cc8888" strokeWidth="1.5" strokeLinecap="round"/>
+            <path d="M193 94 Q200 100 207 94" stroke="#e080a0" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
+            <line x1="200" y1="94" x2="200" y2="99" stroke="#e080a0" strokeWidth="1.8" strokeLinecap="round"/>
           </>
         )}
 
-        {/* Whiskers (extend right toward nose direction) */}
+        {/* Whiskers */}
         {!isSleeping && (
           <>
-            <line x1="192" y1="89" x2="212" y2="84" stroke="#ccc" strokeWidth="1.2"/>
-            <line x1="192" y1="92" x2="213" y2="92" stroke="#ccc" strokeWidth="1.2"/>
-            <line x1="192" y1="89" x2="212" y2="94" stroke="#ccc" strokeWidth="1.2"/>
+            <line x1="200" y1="88" x2="219" y2="82" stroke="#ccc" strokeWidth="1.3"/>
+            <line x1="200" y1="91" x2="220" y2="91" stroke="#ccc" strokeWidth="1.3"/>
+            <line x1="200" y1="88" x2="219" y2="96" stroke="#ccc" strokeWidth="1.3"/>
           </>
         )}
 
-        {/* ZZZ floating when sleeping */}
+        {/* ZZZ bubbles */}
         {isSleeping && (
           <>
-            <text x="196" y="64" fontSize="13" fill="#b0c4de" fontWeight="bold"
+            <text x="202" y="62" fontSize="13" fill="#b0c4de" fontWeight="bold"
               style={{ animation: "cr-zzz 2.2s ease-in-out infinite" }}>z</text>
-            <text x="205" y="47" fontSize="17" fill="#b0c4de" fontWeight="bold"
+            <text x="211" y="44" fontSize="17" fill="#b0c4de" fontWeight="bold"
               style={{ animation: "cr-zzz 2.2s ease-in-out infinite", animationDelay: "0.75s" }}>z</text>
           </>
         )}
@@ -204,6 +217,7 @@ function TigerSVG({ action, flipped }: { action: string; flipped: boolean }) {
   );
 }
 
+/* ─── room furniture ─── */
 function ScratchingPost() {
   return (
     <div className="flex flex-col items-center">
@@ -229,6 +243,7 @@ function CatTree() {
   );
 }
 
+/* ─── room ─── */
 export default function TigerRoom({ onAction }: { onAction: (a: "feed" | "play" | "sleep") => void }) {
   const [spot, setSpot]             = useState<Spot>("center");
   const [targetSpot, setTargetSpot] = useState<Spot>("center");
@@ -258,8 +273,7 @@ export default function TigerRoom({ onAction }: { onAction: (a: "feed" | "play" 
 
   useEffect(() => {
     const roam = setInterval(() => {
-      const idx = Math.floor(Math.random() * SPOT_ORDER.length);
-      moveTo(SPOT_ORDER[idx]);
+      moveTo(SPOT_ORDER[Math.floor(Math.random() * SPOT_ORDER.length)]);
     }, 3800);
     return () => clearInterval(roam);
   }, [moveTo]);
@@ -280,7 +294,7 @@ export default function TigerRoom({ onAction }: { onAction: (a: "feed" | "play" 
       <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-44 h-8 rounded-full opacity-55"
         style={{ background: "radial-gradient(ellipse,#f9a8d4 0%,#c4b5fd 100%)" }}/>
 
-      {/* Window top-left */}
+      {/* Window */}
       <div className="absolute top-4 left-4 w-20 h-24 bg-sky/60 rounded-lg border-4 border-amber-200 overflow-hidden">
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,#87CEEB 60%,#86efac 100%)" }}/>
         <div className="absolute top-2 right-3 w-6 h-6 bg-yellow-300 rounded-full shadow"/>
@@ -290,15 +304,11 @@ export default function TigerRoom({ onAction }: { onAction: (a: "feed" | "play" 
         <div className="absolute inset-y-0 left-1/2 w-0.5 bg-amber-200/80"/>
       </div>
 
-      {/* Cat tree left */}
-      <div className="absolute bottom-14 left-6">
-        <CatTree/>
-      </div>
+      {/* Cat tree */}
+      <div className="absolute bottom-14 left-6"><CatTree/></div>
 
-      {/* Scratching post right */}
-      <div className="absolute bottom-14 right-6">
-        <ScratchingPost/>
-      </div>
+      {/* Scratching post */}
+      <div className="absolute bottom-14 right-6"><ScratchingPost/></div>
 
       {/* Tiger */}
       <div className="absolute bottom-14 transition-all duration-700 ease-in-out"
@@ -306,10 +316,7 @@ export default function TigerRoom({ onAction }: { onAction: (a: "feed" | "play" 
         <TigerSVG action={action} flipped={flipped}/>
       </div>
 
-      {/* Floor line */}
       <div className="absolute bottom-14 left-0 right-0 h-0.5 bg-amber-900/20"/>
-
-      {/* Spot label */}
       <div className="absolute bottom-2 left-0 right-0 text-center">
         <span className="text-xs font-sans text-amber-900/60">{SPOTS[spot].label}</span>
       </div>

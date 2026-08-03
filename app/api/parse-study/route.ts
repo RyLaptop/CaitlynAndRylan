@@ -95,7 +95,7 @@ export async function POST(req: NextRequest) {
     }
 
     const svc = createServiceClient();
-    const rows = cards.map((c) => ({ deck_id: deckId, user_id: user.id, front: c.front, back: c.back }));
+    const rows = cards.map((c) => ({ deck_id: deckId, front: c.front, back: c.back }));
     const { error } = await svc.from("flashcards").insert(rows);
 
     if (error) return NextResponse.json({ error: `DB error: ${error.message}` }, { status: 500 });
