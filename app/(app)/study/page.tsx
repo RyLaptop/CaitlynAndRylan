@@ -2,7 +2,8 @@ import { createClient } from "@/lib/supabase/server";
 import { addDeck, deleteDeck, addCard, deleteCard } from "./actions";
 import FlashcardViewer from "./_flashcard-viewer";
 
-export default async function StudyPage({ searchParams }: { searchParams: { deck?: string } }) {
+export default async function StudyPage({ searchParams }: { searchParams: Promise<{ deck?: string }> }) {
+  const { deck } = await searchParams;
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
@@ -11,7 +12,7 @@ export default async function StudyPage({ searchParams }: { searchParams: { deck
     .select("*, profiles(name, role)")
     .order("created_at", { ascending: false });
 
-  const activeDeckId = searchParams.deck ?? decks?.[0]?.id ?? null;
+  const activeDeckId = deck ?? decks?.[0]?.id ?? null;
   const activeDeck = decks?.find((d: any) => d.id === activeDeckId);
 
   const { data: cards } = activeDeckId

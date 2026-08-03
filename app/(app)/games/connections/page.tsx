@@ -2,8 +2,9 @@ import ConnectionsGame from "./_connections-game";
 import packs from "@/data/connections-packs.json";
 import Link from "next/link";
 
-export default function ConnectionsPage({ searchParams }: { searchParams: { pack?: string } }) {
-  const packId = Number(searchParams.pack) || 1;
+export default async function ConnectionsPage({ searchParams }: { searchParams: Promise<{ pack?: string }> }) {
+  const { pack } = await searchParams;
+  const packId = Number(pack) || 1;
   const pack = packs.find((p) => p.id === packId) ?? packs[0];
 
   return (

@@ -2,8 +2,9 @@ import WordleGame from "./_wordle-game";
 import packs from "@/data/wordle-packs.json";
 import Link from "next/link";
 
-export default function WordlePage({ searchParams }: { searchParams: { pack?: string } }) {
-  const packId = Number(searchParams.pack) || 1;
+export default async function WordlePage({ searchParams }: { searchParams: Promise<{ pack?: string }> }) {
+  const { pack } = await searchParams;
+  const packId = Number(pack) || 1;
   const pack = packs.find((p) => p.id === packId) ?? packs[0];
 
   return (
