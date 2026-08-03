@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Couples Things",
+    "groups": [
+      { "label": "Things we say", "color": "#86efac", "items": ["I miss you", "Good night", "I love you", "Call me"] },
+      { "label": "Tiger stuff", "color": "#fde68a", "items": ["Stripes", "Paws", "Growl", "Cubs"] },
+      { "label": "Date night ideas", "color": "#c4b5fd", "items": ["Movie night", "Cook together", "Game night", "Stargazing"] },
+      { "label": "Love languages", "color": "#f9a8d4", "items": ["Quality time", "Acts of service", "Gift giving", "Words of affirmation"] }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "About Us",
+    "groups": [
+      { "label": "Rylan things", "color": "#86efac", "items": ["Tiger", "TAMU", "Engineering", "Gamer"] },
+      { "label": "Caitlyn things", "color": "#fde68a", "items": ["Cherry blossom", "Journaling", "Playlists", "Sunrise"] },
+      { "label": "Things we both love", "color": "#c4b5fd", "items": ["Ramen", "Cozy films", "Plushies", "Late calls"] },
+      { "label": "Feelings", "color": "#f9a8d4", "items": ["Butterflies", "Warmth", "Safety", "Giddy"] }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Cozy Season",
+    "groups": [
+      { "label": "Fall things", "color": "#86efac", "items": ["Maple", "Hoodie", "Cinnamon", "Lantern"] },
+      { "label": "Hot drinks", "color": "#fde68a", "items": ["Cocoa", "Chai", "Latte", "Matcha"] },
+      { "label": "Comfort shows", "color": "#c4b5fd", "items": ["Friends", "New Girl", "Schitt's Creek", "Ted Lasso"] },
+      { "label": "Soft textures", "color": "#f9a8d4", "items": ["Fleece", "Velvet", "Flannel", "Knit"] }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Romantic",
+    "groups": [
+      { "label": "Flowers", "color": "#86efac", "items": ["Rose", "Tulip", "Peony", "Daisy"] },
+      { "label": "Romance movies", "color": "#fde68a", "items": ["Notebook", "La La Land", "Titanic", "Crazy Rich Asians"] },
+      { "label": "Love songs artists", "color": "#c4b5fd", "items": ["Taylor Swift", "Ed Sheeran", "Adele", "John Mayer"] },
+      { "label": "Sweet treats", "color": "#f9a8d4", "items": ["Macarons", "Strawberries", "Crepes", "Truffles"] }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Dream Trip",
+    "groups": [
+      { "label": "Japan spots", "color": "#86efac", "items": ["Kyoto", "Tokyo", "Osaka", "Nara"] },
+      { "label": "Beach vibes", "color": "#fde68a", "items": ["Sunrise", "Waves", "Sand", "Shells"] },
+      { "label": "Things to pack", "color": "#c4b5fd", "items": ["Camera", "Sunscreen", "Journal", "Snacks"] },
+      { "label": "Travel feelings", "color": "#f9a8d4", "items": ["Wonder", "Cozy", "Together", "Free"] }
+    ]
+  }
+]

@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-blush: #FFB7C5;
+  --color-lavender: #C8B2E8;
+  --color-mint: #B2E8CC;
+  --color-peach: #FFCBA4;
+  --color-cream: #FFF8F0;
+  --color-sky: #B2D8F0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: #FFF8F0;
+  font-family: var(--font-nunito), sans-serif;
+  min-height: 100vh;
+}
+
+/* ── Scrapbook decorations ── */
+.tape {
+  position: relative;
+}
+.tape::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 18px;
+  background: rgba(255, 183, 197, 0.55);
+  border-radius: 3px;
+  z-index: 10;
+}
+
+.tape-yellow::before { background: rgba(255, 220, 100, 0.55); }
+.tape-mint::before   { background: rgba(178, 232, 204, 0.7); }
+.tape-lavender::before { background: rgba(200, 178, 232, 0.6); }
+
+.polaroid {
+  background: white;
+  padding: 8px 8px 32px;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.12);
+}
+
+/* ── Pet animations ── */
+@keyframes petBounce {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes petWiggle {
+  0%, 100% { transform: rotate(-6deg); }
+  50%      { transform: rotate(6deg); }
+}
+@keyframes petBreathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.07); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50%      { transform: translateY(-8px) rotate(1deg); }
+}
+@keyframes pop {
+  0%   { transform: scale(0.7); opacity: 0; }
+  80%  { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%     { transform: translateX(-5px); }
+  40%     { transform: translateX(5px); }
+  60%     { transform: translateX(-3px); }
+  80%     { transform: translateX(3px); }
+}
+@keyframes flipIn {
+  0%   { transform: rotateY(90deg); opacity: 0; }
+  100% { transform: rotateY(0deg); opacity: 1; }
+}
+@keyframes confetti {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(120px) rotate(720deg); opacity: 0; }
+}
+@keyframes heartPop {
+  0%   { transform: scale(0); }
+  50%  { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-pet-bounce  { animation: petBounce 2s ease-in-out infinite; }
+.animate-pet-wiggle  { animation: petWiggle 0.4s ease-in-out infinite; }
+.animate-pet-breathe { animation: petBreathe 3s ease-in-out infinite; }
+.animate-float       { animation: float 3s ease-in-out infinite; }
+.animate-pop         { animation: pop 0.35s ease-out forwards; }
+.animate-fade-in     { animation: fadeIn 0.4s ease-out forwards; }
+.animate-shake       { animation: shake 0.4s ease-in-out; }
+.animate-flip-in     { animation: flipIn 0.4s ease-out forwards; }
+.animate-heart-pop   { animation: heartPop 0.3s ease-out forwards; }
+.animate-spin-slow   { animation: spin-slow 8s linear infinite; }
+
+/* ── Flashcard flip ── */
+.flip-card { perspective: 1000px; }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.55s;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-card-back { transform: rotateY(180deg); }
+
+/* ── Wordle tiles ── */
+.wordle-tile {
+  width: 56px;
+  height: 56px;
+  border: 2px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: border-color 0.1s;
+  border-radius: 8px;
+}
+.wordle-tile.filled  { border-color: #6b7280; }
+.wordle-tile.correct { background: #86efac; border-color: #22c55e; color: #14532d; }
+.wordle-tile.present { background: #fde68a; border-color: #f59e0b; color: #78350f; }
+.wordle-tile.absent  { background: #d1d5db; border-color: #9ca3af; color: #374151; }
+
+/* ── Connections tiles ── */
+.conn-tile {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 12px 6px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.15s;
+  user-select: none;
+  border: 2px solid transparent;
+}
+.conn-tile:hover { filter: brightness(0.95); }
+.conn-tile.selected { transform: scale(0.95); border-color: #374151; }
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFF8F0; }
+::-webkit-scrollbar-thumb { background: #FFB7C5; border-radius: 99px; }
