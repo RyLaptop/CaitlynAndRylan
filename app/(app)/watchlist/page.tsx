@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { addItem, toggleWatched, deleteItem } from "./actions";
+import BackBtn from "../_back-btn";
 
 export default async function WatchlistPage() {
   const supabase = await createClient();
@@ -14,9 +15,12 @@ export default async function WatchlistPage() {
 
   return (
     <div className="px-4 pt-6 max-w-lg mx-auto">
-      <div className="text-center mb-6">
-        <h1 className="font-hand text-4xl text-blush-dark font-bold">Watchlist 🎬</h1>
-        <p className="text-sm text-gray-500 font-sans mt-1">movies & shows to watch together</p>
+      <div className="flex items-center gap-3 mb-6">
+        <BackBtn href="/home" />
+        <div>
+          <h1 className="font-hand text-3xl text-blush-dark font-bold">Watchlist 🎬</h1>
+          <p className="text-xs text-gray-500 font-sans">movies & shows to watch together</p>
+        </div>
       </div>
 
       <form action={addItem} className="tape bg-white rounded-3xl shadow-lg p-5 mb-6 mt-4">

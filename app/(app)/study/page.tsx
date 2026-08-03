@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { addDeck, deleteDeck, addCard, deleteCard } from "./actions";
 import FlashcardViewer from "./_flashcard-viewer";
+import MdUploader from "./_md-uploader";
 import BackBtn from "../_back-btn";
 
 export default async function StudyPage({ searchParams }: { searchParams: Promise<{ deck?: string }> }) {
@@ -61,6 +62,8 @@ export default async function StudyPage({ searchParams }: { searchParams: Promis
             <p className="font-hand text-xl text-gray-600 mb-3">📖 {activeDeck.name}</p>
             <FlashcardViewer cards={cards ?? []} />
           </div>
+
+          <MdUploader deckId={activeDeckId!} />
 
           <form action={addCard} className="tape bg-white rounded-3xl shadow-lg p-5 mt-4">
             <p className="font-hand text-lg text-gray-600 mb-3">Add a Card</p>

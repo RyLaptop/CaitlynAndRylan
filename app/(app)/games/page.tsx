@@ -4,15 +4,19 @@ import BackBtn from "../_back-btn";
 const originalGames = [
   { href: "/games/wordle",         emoji: "🟩", label: "Wordle",         desc: "Guess the 5-letter word in 6 tries", color: "bg-mint/30" },
   { href: "/games/connections",    emoji: "🔗", label: "Connections",    desc: "Find 4 groups of 4",                  color: "bg-lavender/30" },
-  { href: "/games/deep-questions", emoji: "💬", label: "Deep Questions", desc: "How deep can we go?",                color: "bg-blush/30" },
-  { href: "/games/anagram",        emoji: "🔤", label: "Anagram",        desc: "Unscramble the word",                color: "bg-peach/30" },
-  { href: "/games/contexto",       emoji: "🧠", label: "Contexto",       desc: "Find the secret word by context",    color: "bg-sky/30" },
+  { href: "/games/the-loop",       emoji: "🔄", label: "The Loop",       desc: "Rotate tiles to complete the loop",   color: "bg-blush/30" },
+  { href: "/games/deep-questions", emoji: "💬", label: "Deep Questions", desc: "How deep can we go?",                color: "bg-peach/30" },
+  { href: "/games/anagram",        emoji: "🔤", label: "Anagram",        desc: "Unscramble the word",                color: "bg-sky/30" },
+  { href: "/games/contexto",       emoji: "🧠", label: "Contexto",       desc: "Find the secret word by context",    color: "bg-mint/30" },
+  { href: "/games/trivia",         emoji: "🧪", label: "Trivia",         desc: "Science, history, pop culture & more", color: "bg-lavender/30" },
 ];
 
 const gamePigeonGames = [
   { href: "/games/word-hunt",   emoji: "🔍", label: "Word Hunt",   desc: "Find hidden words in the grid",   color: "bg-mint/30" },
   { href: "/games/sea-battle",  emoji: "🚢", label: "Sea Battle",  desc: "Battleship — sink the AI fleet",  color: "bg-sky/30" },
-  { href: "/games/the-loop",    emoji: "🔄", label: "The Loop",    desc: "Rotate tiles to form a loop",     color: "bg-lavender/30" },
+  { href: "/games/basketball",  emoji: "🏀", label: "Basketball",  desc: "Nail the timing — swish!",        color: "bg-peach/30" },
+  { href: "/games/cup-pong",    emoji: "🏓", label: "Cup Pong",    desc: "Aim and sink all the cups",       color: "bg-blush/30" },
+  { href: "/games/checkers",    emoji: "♟️", label: "Checkers",    desc: "Classic checkers vs the AI",      color: "bg-lavender/30" },
 ];
 
 function GameCard({ g }: { g: typeof originalGames[0] }) {

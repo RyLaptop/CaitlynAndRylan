@@ -1,0 +1,62 @@
+{
+  "medicine": [
+    { "q": "What is the longest bone in the human body?", "a": ["Femur", "Tibia", "Humerus", "Spine"], "correct": 0 },
+    { "q": "How many chambers does the human heart have?", "a": ["2", "3", "4", "6"], "correct": 2 },
+    { "q": "What vitamin does your skin produce from sunlight?", "a": ["Vitamin A", "Vitamin B12", "Vitamin C", "Vitamin D"], "correct": 3 },
+    { "q": "What is the most common blood type worldwide?", "a": ["A+", "B+", "O+", "AB+"], "correct": 2 },
+    { "q": "What organ produces insulin?", "a": ["Liver", "Kidney", "Pancreas", "Stomach"], "correct": 2 },
+    { "q": "How many bones are in the adult human body?", "a": ["186", "206", "226", "246"], "correct": 1 },
+    { "q": "The medical term for a broken bone is:", "a": ["Laceration", "Contusion", "Fracture", "Abrasion"], "correct": 2 },
+    { "q": "What is the largest organ in the human body?", "a": ["Liver", "Brain", "Lungs", "Skin"], "correct": 3 },
+    { "q": "Which blood type is the universal donor for red blood cells?", "a": ["A-", "B-", "O-", "AB-"], "correct": 2 },
+    { "q": "The normal resting heart rate for adults is:", "a": ["40–55 bpm", "60–100 bpm", "100–140 bpm", "150–180 bpm"], "correct": 1 }
+  ],
+  "science": [
+    { "q": "What is the chemical symbol for gold?", "a": ["Go", "Gd", "Au", "Ag"], "correct": 2 },
+    { "q": "Water boils at ___ °C at sea level.", "a": ["90", "95", "100", "110"], "correct": 2 },
+    { "q": "What planet is closest to the Sun?", "a": ["Venus", "Earth", "Mercury", "Mars"], "correct": 2 },
+    { "q": "What is the powerhouse of the cell?", "a": ["Nucleus", "Ribosome", "Golgi body", "Mitochondria"], "correct": 3 },
+    { "q": "How many planets are in our solar system?", "a": ["7", "8", "9", "10"], "correct": 1 },
+    { "q": "What is the most abundant element in the universe?", "a": ["Helium", "Oxygen", "Carbon", "Hydrogen"], "correct": 3 },
+    { "q": "DNA stands for:", "a": ["Deoxyribonucleic Acid", "Dinitrogen Acid", "Dynamic Nuclear Agent", "Deoxyribose Amino Acid"], "correct": 0 },
+    { "q": "The speed of light is approximately:", "a": ["30,000 km/s", "300,000 km/s", "3,000,000 km/s", "3,000 km/s"], "correct": 1 },
+    { "q": "What gas do plants primarily absorb during photosynthesis?", "a": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"], "correct": 2 },
+    { "q": "What force keeps planets in orbit around the Sun?", "a": ["Magnetism", "Friction", "Gravity", "Pressure"], "correct": 2 }
+  ],
+  "history": [
+    { "q": "In what year did World War II end?", "a": ["1943", "1944", "1945", "1946"], "correct": 2 },
+    { "q": "Who was the first President of the United States?", "a": ["John Adams", "Thomas Jefferson", "Abraham Lincoln", "George Washington"], "correct": 3 },
+    { "q": "In what year did man first land on the Moon?", "a": ["1965", "1967", "1969", "1971"], "correct": 2 },
+    { "q": "In what year did the Berlin Wall fall?", "a": ["1985", "1987", "1989", "1991"], "correct": 2 },
+    { "q": "Who invented the telephone?", "a": ["Nikola Tesla", "Thomas Edison", "Alexander Graham Bell", "Guglielmo Marconi"], "correct": 2 },
+    { "q": "What year did the French Revolution begin?", "a": ["1776", "1783", "1789", "1799"], "correct": 2 },
+    { "q": "Who was the first woman to win a Nobel Prize?", "a": ["Ada Lovelace", "Marie Curie", "Rosalind Franklin", "Florence Nightingale"], "correct": 1 },
+    { "q": "The Titanic sank in:", "a": ["1908", "1910", "1912", "1914"], "correct": 2 },
+    { "q": "Which empire did Julius Caesar lead?", "a": ["Greek Empire", "Ottoman Empire", "Roman Empire", "Byzantine Empire"], "correct": 2 },
+    { "q": "Where did Christopher Columbus land in 1492?", "a": ["North America", "South America", "The Caribbean", "Greenland"], "correct": 2 }
+  ],
+  "popculture": [
+    { "q": "Which franchise features a galaxy far, far away?", "a": ["Star Trek", "Star Wars", "Dune", "The Expanse"], "correct": 1 },
+    { "q": "In what year was the first iPhone released?", "a": ["2005", "2006", "2007", "2008"], "correct": 2 },
+    { "q": "Which streaming service premiered 'Stranger Things'?", "a": ["Hulu", "HBO Max", "Disney+", "Netflix"], "correct": 3 },
+    { "q": "Who sang 'Shape of You'?", "a": ["Justin Bieber", "Ed Sheeran", "Shawn Mendes", "Harry Styles"], "correct": 1 },
+    { "q": "What TV show is set in the fictional Westeros?", "a": ["The Witcher", "Lord of the Rings", "Game of Thrones", "Vikings"], "correct": 2 },
+    { "q": "Who plays Tony Stark / Iron Man in the MCU?", "a": ["Chris Evans", "Chris Hemsworth", "Robert Downey Jr.", "Mark Ruffalo"], "correct": 2 },
+    { "q": "What is the best-selling video game of all time?", "a": ["Tetris", "GTA V", "Minecraft", "Wii Sports"], "correct": 2 },
+    { "q": "Which artist released the album 'Midnights' in 2022?", "a": ["Ariana Grande", "Billie Eilish", "Taylor Swift", "Olivia Rodrigo"], "correct": 2 },
+    { "q": "In 'The Office,' what company do the characters work for?", "a": ["Initech", "Dunder Mifflin", "Vandelay Industries", "Bluth Company"], "correct": 1 },
+    { "q": "What color pill does Neo take in 'The Matrix'?", "a": ["Blue", "Red", "Green", "White"], "correct": 1 }
+  ],
+  "animals": [
+    { "q": "What is the fastest land animal?", "a": ["Lion", "Pronghorn", "Cheetah", "Greyhound"], "correct": 2 },
+    { "q": "How many hearts does an octopus have?", "a": ["1", "2", "3", "4"], "correct": 2 },
+    { "q": "What is the largest animal on Earth?", "a": ["African Elephant", "Blue Whale", "Colossal Squid", "Whale Shark"], "correct": 1 },
+    { "q": "What is the only mammal capable of true powered flight?", "a": ["Flying squirrel", "Flying fish", "Bat", "Colugo"], "correct": 2 },
+    { "q": "A group of lions is called a:", "a": ["Pack", "Herd", "Colony", "Pride"], "correct": 3 },
+    { "q": "What color is a polar bear's skin (under white fur)?", "a": ["White", "Pink", "Black", "Grey"], "correct": 2 },
+    { "q": "Which animal cannot jump?", "a": ["Hippopotamus", "Rhinoceros", "Elephant", "Crocodile"], "correct": 2 },
+    { "q": "How many eyes does a typical spider have?", "a": ["4", "6", "8", "10"], "correct": 2 },
+    { "q": "What is a baby kangaroo called?", "a": ["Pup", "Cub", "Joey", "Kit"], "correct": 2 },
+    { "q": "Which bird lays the largest eggs?", "a": ["Emu", "Ostrich", "Cassowary", "Albatross"], "correct": 1 }
+  ]
+}

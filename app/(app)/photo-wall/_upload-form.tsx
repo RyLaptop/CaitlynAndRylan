@@ -1,6 +1,5 @@
 "use client";
 import { useState, useRef } from "react";
-import { uploadPhoto } from "./actions";
 
 export default function UploadForm() {
   const [error, setError] = useState<string | null>(null);
@@ -8,18 +7,33 @@ export default function UploadForm() {
   const [preview, setPreview] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const f = e.target.files?.[0];
+    if (!f) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => setPreview(ev.target?.result as string);
+    reader.readAsDataURL(f);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
     setLoading(true);
-    const fd = new FormData(e.currentTarget);
-    const result = await uploadPhoto(fd);
-    setLoading(false);
-    if (result?.error) {
-      setError(result.error);
-    } else {
-      formRef.current?.reset();
-      setPreview(null);
+    try {
+      const fd = new FormData(e.currentTarget);
+      const res = await fetch("/api/upload-photo", { method: "POST", body: fd });
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        setError(data.error ?? "Upload failed");
+      } else {
+        formRef.current?.reset();
+        setPreview(null);
+        window.location.reload();
+      }
+    } catch (err: any) {
+      setError(err?.message ?? "Upload failed");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -36,11 +50,7 @@ export default function UploadForm() {
               <span className="text-xs text-gray-400 font-sans mt-1">Click to choose a photo</span>
             </>
           )}
-          <input name="photo" type="file" accept="image/*" required className="hidden"
-            onChange={(e) => {
-              const f = e.target.files?.[0];
-              if (f) setPreview(URL.createObjectURL(f));
-            }} />
+          <input name="photo" type="file" accept="image/*" required className="hidden" onChange={handleFileChange} />
         </label>
         <input name="caption" placeholder="Caption… (optional)" className="input-field" />
         {error && <p className="text-red-400 text-xs font-sans text-center">{error}</p>}

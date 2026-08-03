@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import ideas from "@/data/date-night-ideas.json";
+import BackBtn from "../_back-btn";
 
 const vibes = ["all", "cozy", "romantic", "fun"] as const;
 type Vibe = typeof vibes[number];
@@ -28,9 +29,12 @@ export default function DateNightPage() {
 
   return (
     <div className="px-4 pt-6 max-w-lg mx-auto">
-      <div className="text-center mb-6">
-        <h1 className="font-hand text-4xl text-blush-dark font-bold">Date Night 🌙</h1>
-        <p className="text-sm text-gray-500 font-sans mt-1">can't decide? let fate choose</p>
+      <div className="flex items-center gap-3 mb-6">
+        <BackBtn href="/home" />
+        <div>
+          <h1 className="font-hand text-3xl text-blush-dark font-bold">Date Night 🌙</h1>
+          <p className="text-xs text-gray-500 font-sans">can&apos;t decide? let fate choose</p>
+        </div>
       </div>
 
       <div className="flex gap-2 flex-wrap justify-center mb-6">

@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { addItem, toggleDone, deleteItem } from "./actions";
+import BackBtn from "../_back-btn";
 
 const EMOJIS = ["🌟","✈️","🏖️","🍣","🎡","🌸","🎶","🐾","🌈","🏕️","🎭","🌙","🎨","🚀","🍰"];
 
@@ -16,9 +17,12 @@ export default async function BucketListPage() {
 
   return (
     <div className="px-4 pt-6 max-w-lg mx-auto">
-      <div className="text-center mb-6">
-        <h1 className="font-hand text-4xl text-blush-dark font-bold">Bucket List 🌟</h1>
-        <p className="text-sm text-gray-500 font-sans mt-1">things to do together someday</p>
+      <div className="flex items-center gap-3 mb-6">
+        <BackBtn href="/home" />
+        <div>
+          <h1 className="font-hand text-3xl text-blush-dark font-bold">Bucket List 🌟</h1>
+          <p className="text-xs text-gray-500 font-sans">things to do together someday</p>
+        </div>
       </div>
 
       <form action={addItem} className="tape bg-white rounded-3xl shadow-lg p-5 mb-6 mt-4">
