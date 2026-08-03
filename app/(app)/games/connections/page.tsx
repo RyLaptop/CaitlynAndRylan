@@ -3,8 +3,8 @@ import packs from "@/data/connections-packs.json";
 import Link from "next/link";
 
 export default async function ConnectionsPage({ searchParams }: { searchParams: Promise<{ pack?: string }> }) {
-  const { pack } = await searchParams;
-  const packId = Number(pack) || 1;
+  const { pack: packParam } = await searchParams;
+  const packId = Number(packParam) || 1;
   const pack = packs.find((p) => p.id === packId) ?? packs[0];
 
   return (
