@@ -1,52 +1,52 @@
 [
   {
     "id": 1,
-    "title": "Couples Things",
+    "title": "Internet Brain",
     "groups": [
-      { "label": "Things we say", "color": "#86efac", "items": ["I miss you", "Good night", "I love you", "Call me"] },
-      { "label": "Tiger stuff", "color": "#fde68a", "items": ["Stripes", "Paws", "Growl", "Cubs"] },
-      { "label": "Date night ideas", "color": "#c4b5fd", "items": ["Movie night", "Cook together", "Game night", "Stargazing"] },
-      { "label": "Love languages", "color": "#f9a8d4", "items": ["Quality time", "Acts of service", "Gift giving", "Words of affirmation"] }
+      { "label": "Words for 'amazing'", "color": "#86efac", "items": ["FIRE", "GOAT", "ELITE", "PEAK"] },
+      { "label": "Words meaning 'to leave'", "color": "#fde68a", "items": ["BOUNCE", "GHOST", "DITCH", "SPLIT"] },
+      { "label": "Gamer slang", "color": "#c4b5fd", "items": ["GRIND", "LOOT", "CAMP", "SPAWN"] },
+      { "label": "Social media actions", "color": "#f9a8d4", "items": ["LIKE", "SHARE", "POST", "FOLLOW"] }
     ]
   },
   {
     "id": 2,
-    "title": "About Us",
+    "title": "Sports Crossover",
     "groups": [
-      { "label": "Rylan things", "color": "#86efac", "items": ["Tiger", "TAMU", "Engineering", "Gamer"] },
-      { "label": "Caitlyn things", "color": "#fde68a", "items": ["Cherry blossom", "Journaling", "Playlists", "Sunrise"] },
-      { "label": "Things we both love", "color": "#c4b5fd", "items": ["Ramen", "Cozy films", "Plushies", "Late calls"] },
-      { "label": "Feelings", "color": "#f9a8d4", "items": ["Butterflies", "Warmth", "Safety", "Giddy"] }
+      { "label": "Things you score", "color": "#86efac", "items": ["GOAL", "POINT", "RUN", "TRY"] },
+      { "label": "___ ball", "color": "#fde68a", "items": ["BASKET", "FOOT", "BASE", "VOLLEY"] },
+      { "label": "Types of kick", "color": "#c4b5fd", "items": ["PENALTY", "FREE", "BICYCLE", "DROP"] },
+      { "label": "Ways to get out in cricket", "color": "#f9a8d4", "items": ["CAUGHT", "BOWLED", "STUMPED", "RUN OUT"] }
     ]
   },
   {
     "id": 3,
-    "title": "Cozy Season",
+    "title": "Double Meaning",
     "groups": [
-      { "label": "Fall things", "color": "#86efac", "items": ["Maple", "Hoodie", "Cinnamon", "Lantern"] },
-      { "label": "Hot drinks", "color": "#fde68a", "items": ["Cocoa", "Chai", "Latte", "Matcha"] },
-      { "label": "Comfort shows", "color": "#c4b5fd", "items": ["Friends", "New Girl", "Schitt's Creek", "Ted Lasso"] },
-      { "label": "Soft textures", "color": "#f9a8d4", "items": ["Fleece", "Velvet", "Flannel", "Knit"] }
+      { "label": "Words for 'fail'", "color": "#86efac", "items": ["FLOP", "BOMB", "TANK", "BUST"] },
+      { "label": "Things that 'pop'", "color": "#fde68a", "items": ["BUBBLE", "COLLAR", "QUIZ", "CHERRY"] },
+      { "label": "___ party", "color": "#c4b5fd", "items": ["BLOCK", "AFTER", "POOL", "HOUSE"] },
+      { "label": "Words before 'line'", "color": "#f9a8d4", "items": ["DEAD", "PUNCH", "HAIR", "BASE"] }
     ]
   },
   {
     "id": 4,
-    "title": "Romantic",
+    "title": "Pop Culture",
     "groups": [
-      { "label": "Flowers", "color": "#86efac", "items": ["Rose", "Tulip", "Peony", "Daisy"] },
-      { "label": "Romance movies", "color": "#fde68a", "items": ["Notebook", "La La Land", "Titanic", "Crazy Rich Asians"] },
-      { "label": "Love songs artists", "color": "#c4b5fd", "items": ["Taylor Swift", "Ed Sheeran", "Adele", "John Mayer"] },
-      { "label": "Sweet treats", "color": "#f9a8d4", "items": ["Macarons", "Strawberries", "Crepes", "Truffles"] }
+      { "label": "One-word Pixar movies", "color": "#86efac", "items": ["UP", "SOUL", "COCO", "CARS"] },
+      { "label": "Streaming platforms", "color": "#fde68a", "items": ["NETFLIX", "HULU", "MAX", "PRIME"] },
+      { "label": "Words before 'tube'", "color": "#c4b5fd", "items": ["YOU", "TEST", "INNER", "CARD"] },
+      { "label": "Taylor Swift albums (one word)", "color": "#f9a8d4", "items": ["FEARLESS", "SPEAK", "REPUTATION", "FOLKLORE"] }
     ]
   },
   {
     "id": 5,
-    "title": "Dream Trip",
+    "title": "Chaos Round",
     "groups": [
-      { "label": "Japan spots", "color": "#86efac", "items": ["Kyoto", "Tokyo", "Osaka", "Nara"] },
-      { "label": "Beach vibes", "color": "#fde68a", "items": ["Sunrise", "Waves", "Sand", "Shells"] },
-      { "label": "Things to pack", "color": "#c4b5fd", "items": ["Camera", "Sunscreen", "Journal", "Snacks"] },
-      { "label": "Travel feelings", "color": "#f9a8d4", "items": ["Wonder", "Cozy", "Together", "Free"] }
+      { "label": "Things that can 'crash'", "color": "#86efac", "items": ["BROWSER", "WAVE", "PARTY", "DIET"] },
+      { "label": "Words for 'to fight'", "color": "#fde68a", "items": ["SCRAP", "BEEF", "CLASH", "BRAWL"] },
+      { "label": "Startup buzzwords", "color": "#c4b5fd", "items": ["PIVOT", "SCALE", "DISRUPT", "SYNERGY"] },
+      { "label": "___ drop", "color": "#f9a8d4", "items": ["TEAR", "NAME", "ACID", "MIC"] }
     ]
   }
 ]
